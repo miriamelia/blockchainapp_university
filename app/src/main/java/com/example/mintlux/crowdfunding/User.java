@@ -16,13 +16,12 @@ public class User {
         this.userID = userID;
         setUserName(userName);
         setPassword(password);
-
     }
 
     public User(String userName, String password) {
         setUserName(userName);
         setPassword(password);
-        this.userID = values.getAsInteger(DatabaseHelper.COL_1);
+        this.userID = values.getAsInteger(DatabaseHelper.TABLE_USER);
     }
 
 

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primary_light"
+    android:layout_gravity="center_horizontal|bottom">
+
+
+    <TextView
+        android:id="@+id/textView_projekt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:paddingBottom="8dp"
+        android:paddingEnd="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/primary_text"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView_kredit" />
+
+    <TextView
+        android:id="@+id/textView_talent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingEnd="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/primary_text"
+        android:textSize="21dp"
+        android:layout_below="@+id/textView_projekt"
+        android:layout_alignEnd="@+id/textView_kredit" />
+
+    <TextView
+        android:id="@+id/textView_kredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:paddingBottom="8dp"
+        android:paddingEnd="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/primary_text"
+        android:textSize="21dp"
+        android:layout_below="@+id/textView_talent"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView_transaktionen"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_marginTop="12dp"
+        android:text="Transaktionen"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"/>
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:popupTheme="@style/AppTheme.PopupOverlay"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary" />
+    <Button
+        android:id="@+id/btn_letztedreimonate"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_transaktionen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="138dp"
+        android:text="LETZTE 3 MONATE"
+        android:textSize="21dp"
+        android:textColor="@color/primary_text" />
 
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_transaction" />
-
-</android.support.design.widget.CoordinatorLayout>
+    <Button
+        android:id="@+id/btn_all"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btn_letztedreimonate"
+        android:layout_below="@+id/btn_letztedreimonate"
+        android:layout_marginTop="41dp"
+        android:text="Alle"
+        android:textSize="21dp"
+        android:textColor="@color/primary_text" />
+</RelativeLayout>

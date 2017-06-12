@@ -3,7 +3,6 @@ package com.example.mintlux.crowdfunding;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -18,8 +17,8 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
          super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_editprofile);
 
-         Button btnRegister = (Button) findViewById(R.id.btnHome);
-         btnRegister.setOnClickListener(this);
+         Button btnTop = (Button) findViewById(R.id.btnTop);
+         btnTop.setOnClickListener(this);
 
      }
 
@@ -27,8 +26,8 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         Button b = (Button) v;
         switch (b.getId()) {
-            case R.id.btnHome:
-                startActivity(new Intent(EditProfileActivity.this, Home.class));
+            case R.id.btnTop:
+                startActivity(new Intent(EditProfileActivity.this, ProjectActivity.class));
                 break;
 
         }

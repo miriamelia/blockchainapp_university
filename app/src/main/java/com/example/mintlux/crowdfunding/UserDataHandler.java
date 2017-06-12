@@ -13,29 +13,25 @@ import java.util.List;
  * Created by mintlux on 6/12/17.
  */
 
-public class DataSourceHandler {
+public class UserDataHandler {
 
-    private static final String LOG_TAG = DataSourceHandler.class.getSimpleName();
+    private static final String LOG_TAG = UserDataHandler.class.getSimpleName();
     private SQLiteDatabase db;
     private DatabaseHelper dbHelp;
 
-    public DataSourceHandler(Context context) {
+    public UserDataHandler(Context context) {
         Log.d(LOG_TAG, "DBSourceHandler creates DBHelper");
         dbHelp = new DatabaseHelper(context);
     }
 
-    private String[] columns = {
-            DatabaseHelper.USER_COL1,
-            DatabaseHelper.USER_COL2,
-            DatabaseHelper.USER_COL3
-    };
+    //DB
 
     public void open() {
-        Log.d(LOG_TAG, "Referenz auf Datenbank ? ");
+        Log.d(LOG_TAG, "Refer to db ");
         db = dbHelp.getWritableDatabase();                  //DB wird erstellt
-        Log.d(LOG_TAG, "DB-Referenz erhalten, Pfad zur DB: " +db.getPath());            //Path: /data/data/com.example.mintlux.crowdfunding/databases/TalentInvest.db
+        Log.d(LOG_TAG, "DB-Path: " +db.getPath());            //Path: /data/data/com.example.mintlux.crowdfunding/databases/TalentInvest.db
 
-        Log.d(LOG_TAG, "Create Table wird ausgeführt");
+        Log.d(LOG_TAG, "Execute Create Table");
         dbHelp.onCreate(db);
     }
 
@@ -44,11 +40,19 @@ public class DataSourceHandler {
         Log.d(LOG_TAG, "Datenbank mit Hilfe des DbHelpers geschlossen.");
     }
 
+    //Handle TableUser
+
+    private String[] columnsUser = {
+            DatabaseHelper.USER_COL1,
+            DatabaseHelper.USER_COL2,
+            DatabaseHelper.USER_COL3
+    };
+
     public List<User> getAllUsers() {
         List<User> userList = new ArrayList<>();
 
         Cursor cursor = db.query(DatabaseHelper.TABLE_USER,                 //Liest alle user aus db
-                columns, null, null, null, null, null);
+                columnsUser, null, null, null, null, null);
 
         cursor.moveToFirst();
         User user;
@@ -85,7 +89,7 @@ public class DataSourceHandler {
             long insertId = db.insert(DatabaseHelper.TABLE_USER, null, values);
 
             Cursor cursor = db.query(DatabaseHelper.TABLE_USER,
-                    columns, DatabaseHelper.USER_COL1 + "=" + insertId,
+                    columnsUser, DatabaseHelper.USER_COL1 + "=" + insertId,
                     null, null, null, null);
 
             cursor.moveToFirst();
@@ -124,5 +128,7 @@ public class DataSourceHandler {
 
         return user;
     }
+
+
 
 }
