@@ -2,26 +2,21 @@ package com.example.mintlux.crowdfunding;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
 
 /**
  * Created by mintlux on 6/5/17.
  */
 
-public class ProfileActivity extends MenuAction implements View.OnClickListener {
+public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.content_profile);
 
         Button btnEditProfile = (Button) findViewById(R.id.btnEditProfile);
         btnEditProfile.setOnClickListener(this);
@@ -37,7 +32,6 @@ public class ProfileActivity extends MenuAction implements View.OnClickListener 
                 break;
         }
     }
-
 
 
 }
