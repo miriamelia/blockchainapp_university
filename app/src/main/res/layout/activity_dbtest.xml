@@ -103,8 +103,8 @@
                 app:menu="@menu/navigation_menu"
                 android:elevation="16dp"
 
-                app:itemIconTint="@color/primary_light"
-                app:itemTextColor="@color/primary_light"
+                pp:itemIconTint="@color/colorAccent"
+                app:itemTextColor="@color/primary_text"
                 app:headerLayout="@layout/activity_side_bar"
                 />
 
