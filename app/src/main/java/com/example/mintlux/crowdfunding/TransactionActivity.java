@@ -31,10 +31,10 @@ public class TransactionActivity extends AppCompatActivity implements View.OnCli
         Button b = (Button) v;
         switch (b.getId()) {
             case R.id.btn_letztedreimonate:
-                startActivity(new Intent(TransactionActivity.this, ProfileActivity.class));
+                startActivity(new Intent(TransactionActivity.this, TransactionMain.class));
                 break;
             case R.id.btn_all:
-                startActivity(new Intent(TransactionActivity.this, ProfileActivity.class));
+                startActivity(new Intent(TransactionActivity.this, TransactionMain.class));
                 break;
         }
     }
